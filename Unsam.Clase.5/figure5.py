@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+zip_generator=zip([1,2,3,4,5],[60,70,80,90,100])
+x,y=zip(*zip_generator) 
+plt.figure()
+plt.scatter(x[:2],y[:2],s=100,c='red',label='Ingresos más bajos')
+plt.scatter(x[2:],y[2:],s=100,c='green',label='Ingresos más altos')
+plt.xlabel('Experiencia en años') 
+plt.ylabel('Ingresos obtenidos') 
+plt.title('Relaciónentre experiencia e ingresos') 
+plt.legend(loc=4,frameon=False,title='Leyenda')
+plt.show()
