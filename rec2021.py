@@ -90,23 +90,33 @@ def suma(x):
         suma = suma + elemento
     return suma
 
+
 def suma_dic(x):
     suma = 0
     for elemento in x.values():
         suma = suma + elemento
     return suma
 
-
-
-suma_companieros = suma_dic(companieros) 
-
-suma_juguetones = suma(juguetones)
-
-suma_inteligentes = suma(inteligentes)
-
 suma_inter = suma(interseccion)
+print(suma_inter)
 
-universo = suma_companieros + suma_inteligentes + suma_juguetones
+suma_companieros = suma_dic(companieros)
+print(suma_companieros)
+suma_juguetones = suma(juguetones)
+print(suma_juguetones)
+suma_inteligentes = suma(inteligentes)
+print(suma_inteligentes)
+
+sumaCI = suma(soloCI) 
+print(sumaCI)
+sumaIJ= suma(soloIJ)
+print(sumaIJ)
+sumaJC = suma(soloJC)
+print(sumaJC)
+
+
+
+universo = (suma_companieros + suma_inteligentes + suma_juguetones )
 print(universo)
 
 
@@ -132,12 +142,22 @@ diagram.get_label_by_id('111').set_text(interseccion)
 # marcamos los contornos
 c = venn3_circles(subsets=(1, 1, 1, 1, 1, 1, 1))
 
+"""
+a. ¿Cuántas mascotas son inteligentes solamente?
+b. ¿Cuántas mascotas son sólo juguetones?
+c. ¿Cuántas mascotas sólo son muy compañeros?
+d. ¿Cuántas mascotas sólo son juguetones e inteligentes?
+e. ¿Cuántas mascotas sólo son juguetones y son muy compañeros? 
+f. ¿Cuántas mascotas sólo son inteligentes y son muy compañeros?
+
+"""
+
 # agregamos más datos aclaratorios al gráfico
 plt.text(-0.90, 0.67,      # Texto y cantidad universal
          f"Universal = {universo}",
          size=10)
 
-plt.text(-1.15, -0.40,
+plt.text(-1.15, -0.30,
          s="Compañeros, inteligentes y juguetones = " + str(suma_inter),
          size=8,
          ha="left",  # alineación horizontal
@@ -146,4 +166,57 @@ plt.text(-1.15, -0.40,
                    ec=(1.0, 0.7, 0.5),
                    fc=(1.0, 0.9, 0.8),))
 
+plt.text(-1.15, -0.40,
+         s="Inteligentes  = " + str(soloI),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))
+
+plt.text(-1.15, -0.50,
+         s="Juguetones = " + str(soloJ),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))
+
+plt.text(-1.15, -0.60,
+         s="Compañeros = " + str(soloC),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))
+
+plt.text(-1.15, -0.70,
+         s="Inteligentes y juguetones = " + str(sumaIJ),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))
+
+plt.text(-1.15, -0.80,
+         s="Compañeros e inteligentes  = " + str(sumaCI),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))                   
+
+plt.text(-1.15, -0.90,
+         s="Compañeros y juguetones = " + str(sumaJC),
+         size=8,
+         ha="left",  # alineación horizontal
+         va="bottom",  # alineación vertical
+         bbox=dict(boxstyle="square",  # tipo de cuadro
+                   ec=(1.0, 0.7, 0.5),
+                   fc=(1.0, 0.9, 0.8),))
 plt.show()                   
