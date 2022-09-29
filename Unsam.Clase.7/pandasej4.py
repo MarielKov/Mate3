@@ -3,8 +3,15 @@ Construye el código necesario que emita el precio mínimo, el máximo y promedi
 
 import pandas as pd
 
-datos = pd.read_csv("autos.csv")
+
+datos = pd.read_excel("Unsam.Clase.6/dataset/14.autos.xlsx")
 df = pd.DataFrame(datos)
-df.head()
+print(df["PRECIO"].min())
+print(df["PRECIO"].max())
+print(round(df["PRECIO"].mean(), 2))
+
+
+
+
 
 
