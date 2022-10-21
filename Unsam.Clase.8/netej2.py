@@ -14,8 +14,6 @@ G.add_nodes_from(nodos)
 G.add_edges_from([(0,6),(0,3),(0,1),(3,6),(1,6),(2,1),(3,4),(4,5),(7,4),(7,2),(5,7)])
 labels={0:"A",1:"B",2:"C",3:"D", 4:"E",5:"F",6:"G",7:"Z"}
 
-
-
 A_Z = nx.algorithms.dijkstra_path(G,0,7)
 
 print("Ruta mas corta usando el algoritmo de Dijkstra entre a y e:\n", A_Z)
@@ -26,7 +24,7 @@ nx.draw_circular(G, labels=labels, arrows=True,
  edgecolors = "gray",
  font_size=8) 
 
-nx.draw_networkx_edge_labels(G, pos=nx.shell_layout(G),
+nx.draw_networkx_edge_labels(G, pos=,
  edge_labels ={(0,6):'2', (0,3):'5', (0,1):'4',(3,6):'1',
  (1,6):'1',(2,1):'5',(3,4):'2',(4,5):'1',
  (7,4):'3',(7,2):'1',(5,7):'2'},

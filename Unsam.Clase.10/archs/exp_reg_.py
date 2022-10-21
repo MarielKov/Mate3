@@ -1,7 +1,7 @@
 
 import re
 
-with open("<ruta al archivo>/codigos_postales.txt", encoding="utf-8") as f_codigos_postales:
+with open("archs/codigos_postales.txt", encoding="utf-8") as f_codigos_postales:
     codigos = {}
     for linea in f_codigos_postales:
         res1 = re.search(r"[\d ]+([^\d]+[a-z])\s(\d+)", linea)
